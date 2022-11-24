@@ -1,0 +1,71 @@
+@model IEnumerable<V_Vuelo.Models.Consecutivos>
+
+@{
+    ViewData["Title"] = "Consecutivos";
+}
+
+<h1>Consecutivos</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Consecutivo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Disponibilidad_prefijo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Prefijo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rango)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rango_inicial)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rango_final)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Consecutivo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Disponibilidad_prefijo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prefijo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rango)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rango_inicial)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rango_final)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Consecutivo_Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Consecutivo_Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Consecutivo_Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
